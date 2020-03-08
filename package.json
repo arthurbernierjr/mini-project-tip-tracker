@@ -2,7 +2,7 @@
   "name": "My-Super-Cool-Kofu-App",
   "version": "1.0.0",
   "engines": {
-    "node": "13.10",
+    "node": "13.10"
   },
   "description": "",
   "main": "index.js",
