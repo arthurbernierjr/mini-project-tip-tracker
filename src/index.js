@@ -2,8 +2,16 @@ import { Komponent , render} from 'kofujs'
 import TipInput from './components/TipInput'
 
 const styles = {
-  mainPageHeading: {
-    backgroundColor: 'red'
+  mainBackground: {
+    'backgroundColor': 'rgba(25,25,25,0.4)',
+    'minHeight': '100vh'
+  },
+  mainHeading: {
+    'fontSize': '4rem',
+    'color': 'white',
+    'textAlign': 'center',
+    'margin': '0',
+    'padding': '8px'
   }
 }
 
@@ -11,7 +19,7 @@ class Example extends Komponent{
   constructor (props)  {
     super (props)
 
-    this.classes = this.setStyles(styles).classes
+    this.classNames = this.setStyles(styles).classes
   }
 
   komponentDidMount () {
@@ -20,7 +28,10 @@ class Example extends Komponent{
 
   present () {
     return (
+      <div className={this.classNames.mainBackground}>
+        <h1 className={this.classNames.mainHeading}>Tip Calculator Example</h1>
         <TipInput />
+      </div>
     )
   }
 }
