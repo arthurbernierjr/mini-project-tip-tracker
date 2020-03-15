@@ -7,6 +7,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = env => {
   return {
+    devtool: 'inline-source-map',
     entry: {
       main: './src/index.js'
     },
@@ -18,7 +19,7 @@ module.exports = env => {
       rules: [
         {
               test: /\.js$/,
-              exclude: /node_modules\/(?!(kofujs)\/).*/,
+              exclude: /(node_modules\/(?!(kofujs)\/).*)|(node_modules\/kofujs\/node_modules\/(snabbdom|rxjs).*)/,
               // exclude: /(node_modules)/,
               use: {
                 loader: 'babel-loader',
